@@ -1,0 +1,57 @@
+Summary:	The CGI:IRC, chat on irc through www
+Summary(pl):	CGI:IRC, rozmowy irc poprzez www
+Name:		cgiirc
+Version:	0.4.2
+Release:	1
+License:	GPL
+Group:		Applications/IRC
+Group(pl):	Aplikacje/IRC
+Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+URL:		http://cgiirc.sourceforge.net/doc.html
+Requires:	webserver
+Requires:	perl
+Provides:	wwwirc
+Buildarch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+This package contains CGIIRC, a web based interface to irc, it allows to 
+bypass firewalls with blocked ports other then http, and use irc on machines
+without instaled client (i.e. internet cafes, offices where you have no 
+control of installed software etc.). All you need on the client side is a 
+www browser and internet connection.
+
+%description -l pl
+Pakitet ten zawiera CGIWEB, interfejs oparty na www do irca, pozwala na 
+obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿ http, i
+u¿ywanie irca na maszynach bez zaistalowanego klienta (np kafejkach, biurach
+gdzie nie ma siê wp³ywu na zainstalowane oprogramowanie). Wszystko co jest 
+wymagane po stronie klienta to przegl±darka i pod³±czenie do internetu.
+
+%prep 
+%setup -q 
+
+%install
+install -d $RPM_BUILD_ROOT/home/httpd/{html/%{name},cgi-bin,cgi-bin/formats} \
+	$RPM_BUILD_ROOT%{_datadir}/docs/%{name}
+
+gzip -9nf AUTHORS COPYING CHANGES README TODO doc.html
+
+install html/*  $RPM_BUILD_ROOT/home/httpd/html/%{name}
+cp -avR cgi-bin/* $RPM_BUILD_ROOT/home/httpd/cgi-bin
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files 
+%defattr(644,root,root,755)
+%doc AUTHORS.gz COPYING.gz CHANGES.gz TODO.gz README.gz doc.html.gz
+%defattr(755,http,http,755)
+%config (noreplace) /home/httpd/cgi-bin/config
+%config (noreplace) /home/httpd/cgi-bin/ipaccess
+/home/httpd/html/%{name}/*
+/home/httpd/cgi-bin/*.cgi
+
+%changelog
+* %{date} PLD Team <pld-list@pld.org.pl>
+All persons listed below can be reached at <cvs_login>@pld.org.pl
