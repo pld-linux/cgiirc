@@ -1,15 +1,16 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	The CGI:IRC, chat on irc through www
 Summary(pl):	CGI:IRC, rozmowy irc poprzez www
 Name:		cgiirc
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	980d241a295c724a8c5b1a04370c35f2
 URL:		http://cgiirc.sourceforge.net/doc.html
+BuildRequires:	rpm-perlprov
 Requires:	webserver
-Requires:	perl
 Provides:	wwwirc
 Buildarch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
