@@ -23,7 +23,7 @@ client side is a www browser and internet connection.
 %description -l pl
 Pakitet ten zawiera CGIWEB, interfejs oparty na www do irca, pozwala
 na obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿
-http, i u¿ywanie irca na maszynach bez zaistalowanego klienta (np
+http, i u¿ywanie irca na maszynach bez zainstalowanego klienta (np
 kafejkach, biurach gdzie nie ma siê wp³ywu na zainstalowane
 oprogramowanie). Wszystko co jest wymagane po stronie klienta to
 przegl±darka i pod³±czenie do internetu.
