@@ -3,7 +3,7 @@ Summary(pl):	CGI:IRC, rozmowy irc poprzez www
 Name:		cgiirc
 Version:	0.4.2
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL:		http://cgiirc.sourceforge.net/doc.html
@@ -44,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING CHANGES README TODO doc.html
+%doc AUTHORS CHANGES README TODO doc.html
 %defattr(755,http,http,755)
 %config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/config
 %config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/ipaccess
