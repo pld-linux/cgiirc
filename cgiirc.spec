@@ -23,7 +23,7 @@ you have no control of installed software etc.). All you need on the
 client side is a www browser and internet connection.
 
 %description -l pl
-Pakitet ten zawiera CGIWEB, interfejs oparty na www do irca, pozwala
+Pakiet ten zawiera CGIWEB, interfejs oparty na www do irca, pozwala
 na obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿
 http, i u¿ywanie irca na maszynach bez zainstalowanego klienta (np
 kafejkach, biurach gdzie nie ma siê wp³ywu na zainstalowane
