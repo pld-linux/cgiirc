@@ -8,7 +8,7 @@ License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/cgiirc/%{name}-%{version}.tar.gz
 # Source0-md5:	3b0dde79ab9e4712fb8115a2b056d7dc
-URL:		http://cgiirc.sourceforge.net/doc.html
+URL:		http://cgiirc.sourceforge.net/
 BuildRequires:	rpm-perlprov
 Requires:	webserver
 Provides:	wwwirc
