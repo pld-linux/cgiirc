@@ -12,7 +12,7 @@ URL:		http://cgiirc.sourceforge.net/doc.html
 BuildRequires:	rpm-perlprov
 Requires:	webserver
 Provides:	wwwirc
-Buildarch:	noarch
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
