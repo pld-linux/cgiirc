@@ -28,8 +28,8 @@ kafejkach, biurach gdzie nie ma siê wp³ywu na zainstalowane
 oprogramowanie). Wszystko co jest wymagane po stronie klienta to
 przegl±darka i pod³±czenie do internetu.
 
-%prep 
-%setup -q 
+%prep
+%setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,7 +44,7 @@ cp -avR cgi-bin/* $RPM_BUILD_ROOT/home/httpd/cgi-bin
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS.gz COPYING.gz CHANGES.gz TODO.gz README.gz doc.html.gz
 %defattr(755,http,http,755)
