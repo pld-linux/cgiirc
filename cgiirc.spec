@@ -5,7 +5,7 @@ Version:	0.4.2
 Release:	1
 License:	GPL
 Group:		Applications/Networking
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL:		http://cgiirc.sourceforge.net/doc.html
 Requires:	webserver
 Requires:	perl
