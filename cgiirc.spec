@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	980d241a295c724a8c5b1a04370c35f2
 URL:		http://cgiirc.sourceforge.net/doc.html
 Requires:	webserver
 Requires:	perl
