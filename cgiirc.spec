@@ -3,7 +3,7 @@ Summary:	The CGI:IRC, chat on irc through WWW
 Summary(pl):	CGI:IRC, rozmowy irc poprzez WWW
 Name:		cgiirc
 Version:	0.5.5
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/cgiirc/%{name}-%{version}.tar.gz
@@ -37,18 +37,25 @@ przegl±darka i pod³±czenie do Internetu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{cgidir}
+install -d $RPM_BUILD_ROOT%{cgidir}/%{name}
 
-cp -avR {cgiirc.config,*.cgi,formats,images,interfaces,modules} $RPM_BUILD_ROOT%{cgidir}
-cp ipaccess.example $RPM_BUILD_ROOT%{cgidir}/ipaccess
+cp -avR {cgiirc.*,*.cgi,.htaccess,formats,images,interfaces,modules} $RPM_BUILD_ROOT%{cgidir}/%{name}
+cp ipaccess.example $RPM_BUILD_ROOT%{cgidir}/%{name}/ipaccess
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README docs
+%attr (755,root,root) %dir %{cgidir}/%{name}
+%{cgidir}/%{name}/formats
+%{cgidir}/%{name}/images
+%{cgidir}/%{name}/interfaces
+%{cgidir}/%{name}/modules
+%{cgidir}/%{name}/.htaccess
+%{cgidir}/%{name}/cgiirc.config.full
+%config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/cgiirc.config
+%config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/ipaccess
+%doc README docs/*
 %defattr(755,http,http,755)
-%config(noreplace) %verify(not size mtime md5) %{cgidir}/cgiirc.config
-%config(noreplace) %verify(not size mtime md5) %{cgidir}/ipaccess
-%{cgidir}/*
+%{cgidir}/%{name}/*.cgi
