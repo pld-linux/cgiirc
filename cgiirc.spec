@@ -47,7 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr (755,root,root) %dir %{cgidir}/%{name}
+%doc README docs/*
+%dir %{cgidir}/%{name}
 %{cgidir}/%{name}/formats
 %{cgidir}/%{name}/images
 %{cgidir}/%{name}/interfaces
@@ -56,6 +57,4 @@ rm -rf $RPM_BUILD_ROOT
 %{cgidir}/%{name}/cgiirc.config.full
 %config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/cgiirc.config
 %config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/ipaccess
-%doc README docs/*
-%defattr(755,http,http,755)
-%{cgidir}/%{name}/*.cgi
+%attr(755,http,http) %{cgidir}/%{name}/*.cgi
