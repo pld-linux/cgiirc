@@ -2,12 +2,12 @@
 Summary:	The CGI:IRC, chat on irc through www
 Summary(pl):	CGI:IRC, rozmowy irc poprzez www
 Name:		cgiirc
-Version:	0.4.2
+Version:	0.5.3
 Release:	2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	980d241a295c724a8c5b1a04370c35f2
+# Source0-md5:	ed0be082c88b5760ba3818f33b3789e9
 URL:		http://cgiirc.sourceforge.net/doc.html
 BuildRequires:	rpm-perlprov
 Requires:	webserver
@@ -35,20 +35,18 @@ przegl±darka i pod³±czenie do internetu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/home/services/httpd/{html/%{name},cgi-bin/formats} \
-	$RPM_BUILD_ROOT%{_datadir}/docs/%{name}
+install -d $RPM_BUILD_ROOT/home/services/httpd/cgi-bin/
 
-install html/*  $RPM_BUILD_ROOT/home/services/httpd/html/%{name}
-cp -avR cgi-bin/* $RPM_BUILD_ROOT/home/services/httpd/cgi-bin
+cp -avR {cgiirc.config,*.cgi,formats,images,interfaces,modules} $RPM_BUILD_ROOT/home/services/httpd/cgi-bin
+cp ipaccess.example $RPM_BUILD_ROOT/home/services/httpd/cgi-bin/ipaccess
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGES README TODO doc.html
+%doc README docs
 %defattr(755,http,http,755)
-%config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/config
+%config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/cgiirc.config
 %config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/ipaccess
-/home/services/httpd/html/%{name}
-/home/services/httpd/cgi-bin/*.cgi
+/home/services/httpd/cgi-bin/*
