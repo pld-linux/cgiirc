@@ -33,11 +33,11 @@ przegl±darka i pod³±czenie do internetu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/home/httpd/{html/%{name},cgi-bin,cgi-bin/formats} \
+install -d $RPM_BUILD_ROOT/home/services/httpd/{html/%{name},cgi-bin/formats} \
 	$RPM_BUILD_ROOT%{_datadir}/docs/%{name}
 
-install html/*  $RPM_BUILD_ROOT/home/httpd/html/%{name}
-cp -avR cgi-bin/* $RPM_BUILD_ROOT/home/httpd/cgi-bin
+install html/*  $RPM_BUILD_ROOT/home/services/httpd/html/%{name}
+cp -avR cgi-bin/* $RPM_BUILD_ROOT/home/services/httpd/cgi-bin
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING CHANGES README TODO doc.html
 %defattr(755,http,http,755)
-%config (noreplace) /home/httpd/cgi-bin/config
-%config (noreplace) /home/httpd/cgi-bin/ipaccess
-/home/httpd/html/%{name}
-/home/httpd/cgi-bin/*.cgi
+%config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/config
+%config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/ipaccess
+/home/services/httpd/html/%{name}
+/home/services/httpd/cgi-bin/*.cgi
