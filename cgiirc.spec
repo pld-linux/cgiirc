@@ -3,7 +3,7 @@ Summary:	The CGI:IRC, chat on irc through www
 Summary(pl):	CGI:IRC, rozmowy irc poprzez www
 Name:		cgiirc
 Version:	0.5.3
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -35,10 +35,10 @@ przegl±darka i pod³±czenie do internetu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/home/services/httpd/cgi-bin/
+install -d $RPM_BUILD_ROOT/srv/httpd/cgi-bin/
 
-cp -avR {cgiirc.config,*.cgi,formats,images,interfaces,modules} $RPM_BUILD_ROOT/home/services/httpd/cgi-bin
-cp ipaccess.example $RPM_BUILD_ROOT/home/services/httpd/cgi-bin/ipaccess
+cp -avR {cgiirc.config,*.cgi,formats,images,interfaces,modules} $RPM_BUILD_ROOT/srv/httpd/cgi-bin
+cp ipaccess.example $RPM_BUILD_ROOT/srv/httpd/cgi-bin/ipaccess
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,6 +47,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README docs
 %defattr(755,http,http,755)
-%config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/cgiirc.config
-%config(noreplace) %verify(not size mtime md5) /home/services/httpd/cgi-bin/ipaccess
-/home/services/httpd/cgi-bin/*
+%config(noreplace) %verify(not size mtime md5) /srv/httpd/cgi-bin/cgiirc.config
+%config(noreplace) %verify(not size mtime md5) /srv/httpd/cgi-bin/ipaccess
+/srv/httpd/cgi-bin/*
