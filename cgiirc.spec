@@ -2,12 +2,12 @@
 Summary:	The CGI:IRC, chat on irc through WWW
 Summary(pl):	CGI:IRC, rozmowy irc poprzez WWW
 Name:		cgiirc
-Version:	0.5.4
+Version:	0.5.5
 Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dl.sourceforge.net/cgiirc/%{name}-%{version}.tar.gz
-# Source0-md5:	c32ce6514626729ef8cf30cf7bd1a51e
+# Source0-md5:	3b0dde79ab9e4712fb8115a2b056d7dc
 URL:		http://cgiirc.sourceforge.net/doc.html
 BuildRequires:	rpm-perlprov
 Requires:	webserver
