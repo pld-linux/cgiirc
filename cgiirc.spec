@@ -36,8 +36,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/home/httpd/{html/%{name},cgi-bin,cgi-bin/formats} \
 	$RPM_BUILD_ROOT%{_datadir}/docs/%{name}
 
-gzip -9nf AUTHORS COPYING CHANGES README TODO doc.html
-
 install html/*  $RPM_BUILD_ROOT/home/httpd/html/%{name}
 cp -avR cgi-bin/* $RPM_BUILD_ROOT/home/httpd/cgi-bin
 
@@ -46,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS.gz COPYING.gz CHANGES.gz TODO.gz README.gz doc.html.gz
+%doc AUTHORS COPYING CHANGES README TODO doc.html
 %defattr(755,http,http,755)
 %config (noreplace) /home/httpd/cgi-bin/config
 %config (noreplace) /home/httpd/cgi-bin/ipaccess
