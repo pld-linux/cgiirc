@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package contains CGIIRC, a web based interface to irc, it allows
 to bypass firewalls with blocked ports other then http, and use irc on
-machines without instaled client (i.e. internet cafes, offices where
+machines without installed client (i.e. internet cafes, offices where
 you have no control of installed software etc.). All you need on the
 client side is a www browser and internet connection.
 
