@@ -4,9 +4,10 @@ Name:		cgiirc
 Version:	0.4.2
 Release:	1
 License:	GPL
-Group:		Applications/IRC
-Group(pl):	Aplikacje/IRC
-Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Group:		Applications/Networking
+Group(de):	Applikationen/Netzwerkwesen
+Group(pl):	Aplikacje/Sieciowe
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/%{name}/%{name}-%{version}.tar.gz
 URL:		http://cgiirc.sourceforge.net/doc.html
 Requires:	webserver
 Requires:	perl
@@ -15,23 +16,25 @@ Buildarch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package contains CGIIRC, a web based interface to irc, it allows to 
-bypass firewalls with blocked ports other then http, and use irc on machines
-without instaled client (i.e. internet cafes, offices where you have no 
-control of installed software etc.). All you need on the client side is a 
-www browser and internet connection.
+This package contains CGIIRC, a web based interface to irc, it allows
+to bypass firewalls with blocked ports other then http, and use irc on
+machines without instaled client (i.e. internet cafes, offices where
+you have no control of installed software etc.). All you need on the
+client side is a www browser and internet connection.
 
 %description -l pl
-Pakitet ten zawiera CGIWEB, interfejs oparty na www do irca, pozwala na 
-obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿ http, i
-u¿ywanie irca na maszynach bez zaistalowanego klienta (np kafejkach, biurach
-gdzie nie ma siê wp³ywu na zainstalowane oprogramowanie). Wszystko co jest 
-wymagane po stronie klienta to przegl±darka i pod³±czenie do internetu.
+Pakitet ten zawiera CGIWEB, interfejs oparty na www do irca, pozwala
+na obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿
+http, i u¿ywanie irca na maszynach bez zaistalowanego klienta (np
+kafejkach, biurach gdzie nie ma siê wp³ywu na zainstalowane
+oprogramowanie). Wszystko co jest wymagane po stronie klienta to
+przegl±darka i pod³±czenie do internetu.
 
 %prep 
 %setup -q 
 
 %install
+rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/home/httpd/{html/%{name},cgi-bin,cgi-bin/formats} \
 	$RPM_BUILD_ROOT%{_datadir}/docs/%{name}
 
@@ -49,9 +52,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(755,http,http,755)
 %config (noreplace) /home/httpd/cgi-bin/config
 %config (noreplace) /home/httpd/cgi-bin/ipaccess
-/home/httpd/html/%{name}/*
+/home/httpd/html/%{name}
 /home/httpd/cgi-bin/*.cgi
-
-%changelog
-* %{date} PLD Team <pld-list@pld.org.pl>
-All persons listed below can be reached at <cvs_login>@pld.org.pl
