@@ -25,8 +25,8 @@ you have no control of installed software etc.). All you need on the
 client side is a WWW browser and Internet connection.
 
 %description -l pl
-Pakiet ten zawiera CGIWEB, interfejs oparty na WWW do irca, pozwala
-na obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿
+Pakiet ten zawiera CGIWEB, interfejs oparty na WWW do irca, pozwala na
+obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿
 http, i u¿ywanie irca na maszynach bez zainstalowanego klienta (np
 kafejkach, biurach gdzie nie ma siê wp³ywu na zainstalowane
 oprogramowanie). Wszystko co jest wymagane po stronie klienta to
@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %{cgidir}/%{name}/interfaces
 %{cgidir}/%{name}/modules
 %{cgidir}/%{name}/cgiirc.config.full
-%config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/.htaccess
-%config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/cgiirc.config
-%config(noreplace) %verify(not size mtime md5) %{cgidir}/%{name}/ipaccess
+%config(noreplace) %verify(not md5 mtime size) %{cgidir}/%{name}/.htaccess
+%config(noreplace) %verify(not md5 mtime size) %{cgidir}/%{name}/cgiirc.config
+%config(noreplace) %verify(not md5 mtime size) %{cgidir}/%{name}/ipaccess
 %attr(755,root,root) %{cgidir}/%{name}/*.cgi
