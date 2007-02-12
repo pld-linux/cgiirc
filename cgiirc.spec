@@ -1,7 +1,7 @@
 # TODO: webapps
 %include	/usr/lib/rpm/macros.perl
 Summary:	The CGI:IRC, chat on irc through WWW
-Summary(pl):	CGI:IRC, rozmowy irc poprzez WWW
+Summary(pl.UTF-8):   CGI:IRC, rozmowy irc poprzez WWW
 Name:		cgiirc
 Version:	0.5.7
 Release:	2
@@ -25,13 +25,13 @@ machines without installed client (i.e. internet cafes, offices where
 you have no control of installed software etc.). All you need on the
 client side is a WWW browser and Internet connection.
 
-%description -l pl
+%description -l pl.UTF-8
 Pakiet ten zawiera CGIWEB, interfejs oparty na WWW do irca, pozwala na
-obej¶cie zapór sieciowych blokuj±cych dostêp do portów innych ni¿
-http, i u¿ywanie irca na maszynach bez zainstalowanego klienta (np
-kafejkach, biurach gdzie nie ma siê wp³ywu na zainstalowane
+obejÅ›cie zapÃ³r sieciowych blokujÄ…cych dostÄ™p do portÃ³w innych niÅ¼
+http, i uÅ¼ywanie irca na maszynach bez zainstalowanego klienta (np
+kafejkach, biurach gdzie nie ma siÄ™ wpÅ‚ywu na zainstalowane
 oprogramowanie). Wszystko co jest wymagane po stronie klienta to
-przegl±darka i pod³±czenie do Internetu.
+przeglÄ…darka i podÅ‚Ä…czenie do Internetu.
 
 %prep
 %setup -q
