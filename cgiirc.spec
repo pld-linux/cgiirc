@@ -7,7 +7,7 @@ Version:	0.5.9
 Release:	1
 License:	GPL v2
 Group:		Applications/Networking
-Source0:	http://prdownloads.sourceforge.net/cgiirc/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/cgiirc/%{name}-%{version}.tar.gz
 # Source0-md5:	2ca89a52ca51fcc7287a832701b6915f
 URL:		http://cgiirc.sourceforge.net/
 BuildRequires:	rpm-perlprov
