@@ -1,5 +1,4 @@
 # TODO: webapps
-%include	/usr/lib/rpm/macros.perl
 Summary:	The CGI:IRC, chat on irc through WWW
 Summary(pl.UTF-8):	CGI:IRC, rozmowy irc poprzez WWW
 Name:		cgiirc
